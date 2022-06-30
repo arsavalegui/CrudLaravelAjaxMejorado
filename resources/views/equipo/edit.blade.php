@@ -1,0 +1,1 @@
+Vista edit de equipo

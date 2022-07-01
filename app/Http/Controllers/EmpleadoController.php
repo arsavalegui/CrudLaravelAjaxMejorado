@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Empleado;
+use App\Models\Equipo;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\ViewErrorBag;
@@ -31,7 +32,8 @@ class EmpleadoController extends Controller
     public function create() 
     {
         //
-        return view('empleado.create');
+        $datos['equipos']=Equipo::paginate();
+        return view('empleado.create', ['empleados.form', $datos]);
     }
 
     /**
@@ -184,4 +186,12 @@ class EmpleadoController extends Controller
             ]);
         }
     }
+
+    public function getTeamName(){
+        //
+        $datos['equipos']=Equipo::paginate();
+
+        return view('empleado.form', $datos);
+    }
 }
+

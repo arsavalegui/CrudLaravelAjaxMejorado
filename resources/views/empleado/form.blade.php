@@ -2,7 +2,6 @@
 <h1> {{$modo}} empleado </h1>
 
 @if(count($errors)>0)
-
     <div class="alert alert-danger" role="alert">
         <ul>
             @foreach($errors->all() as $error)
@@ -10,7 +9,6 @@
             @endforeach
         </ul>
     </div>
-
 @endif
 
 <div class="form-group" >
@@ -31,12 +29,6 @@
 <div class="form-group" >
     <label for="Correo">Correo</label>
     <input type="text" class="form-control" name="Correo" id="Correo" value="{{ isset($empleado->Correo)?$empleado->Correo:old('Correo') }}">
-</div>
-
-<div class="form-group">
-    <select name="" id="">
-        
-    </select>
 </div>
 
 <div class="form-group" >
